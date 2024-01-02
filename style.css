@@ -3,6 +3,7 @@ body {
     padding: 0;
     width: auto;
     background: #0d0e0e;
+    overflow-x: hidden;
   }
   
 canvas {
@@ -112,7 +113,11 @@ main {
     #Hero_Text {
         font-size: 24px; 
     }
+    #logo {
+        height: 65px; 
+    }
 }
+
 
 #Frontinfo {
     text-align: center;
