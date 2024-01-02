@@ -17,26 +17,20 @@ canvas {
     display: flex;
     align-items: center;
     justify-content: center;
-    /* position: absolute;
-    top: 50%;
-    left:50%;
-    transform: translate(-50%, -50%); */
-    align-items: center;
-    padding: 10px;
+    padding: 2px;
 }
 
 header {
-    position:static;
-    height: 110px;
-    margin-bottom: 25px;
+    position: relative;
+    width:auto;
 }
 
-#navbar a{
+a{
     position: relative;
     color: #FBFFFF;
     font-size: 19px;
-    padding-right: 25px;
-    padding-left: 25px;
+    padding-right: 27px;
+    padding-left: 27px;
     text-decoration: none;
     font-family: Prompt, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
@@ -45,9 +39,9 @@ header {
     content: '';
     display: block;
     width: 0;
-    height: 2.2px; /*thickness of the line */
+    height: 2.2px;
     background: aliceblue;
-    transition: width 0.25s ease; /*duration and easing */
+    transition: width 0.25s ease;
     position: absolute;
     bottom: -12%;
     left: 23%;
@@ -60,15 +54,28 @@ header {
     transform: scaleX(1.2);
 }
 
+#navbar a {
+    color: #fff;
+    transition: color 0.3s ease; 
+}
+
+#navbar a:hover {
+    color: #a5f3fa; 
+}
+
 main {
+    position: relative;
+    padding: 1px;
+    width:auto;
+    margin: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 
 .Hero_Section {
     display: flex;
-    margin-top: 10px;
     align-items: center;
     flex-direction: row;
     align-content: center;
@@ -89,12 +96,42 @@ main {
     height:300px;
     border: #e8f6f6 solid 2.5px;
     filter: contrast(125%);
-    filter:saturate(150%);
+    filter:saturate(125%);
 }
 
 #logo {
-    height: 122px;
+    height: 135px;
     border-radius: 50%;
-    filter: contrast(125%);
-    filter:saturate(150%);
+}
+
+@media only screen and (max-width: 600px) {
+    .Hero_Section {
+        flex-direction: column-reverse;
+    }
+
+    #Hero_Text {
+        font-size: 24px; 
+    }
+}
+
+#Frontinfo {
+    text-align: center;
+    color: #FBFFFF;
+    font-size: 24px;
+    font-family: cursive;
+}
+
+footer {
+    color: #fff; 
+    padding: 20px;
+    text-align: center;
+}
+
+.icons a {
+    color: #fff;
+    transition: color 0.3s ease; 
+}
+
+.icons a:hover {
+    color: #00d1e3; 
 }
