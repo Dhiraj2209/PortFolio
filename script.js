@@ -25,10 +25,19 @@ function drawStars() {
   for (let i = 0; i < stars.length; i++) {
     const star = stars[i];
 
+    // Draw star shape
+    ctx.save(); // Save the current transformation state
     ctx.beginPath();
-    ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
+    ctx.translate(star.x, star.y);
+    ctx.rotate((Math.PI / 180) * 18); // Rotate by 18 degrees (to create a star shape)
+    for (let j = 0; j < 5; j++) {
+      ctx.lineTo(Math.cos((Math.PI * 2 * j) / 5) * star.radius, Math.sin((Math.PI * 2 * j) / 5) * star.radius);
+      ctx.lineTo(Math.cos((Math.PI * 4 * j) / 5) * (star.radius / 2), Math.sin((Math.PI * 4 * j) / 5) * (star.radius / 2));
+    }
+    ctx.closePath();
     ctx.fillStyle = star.color;
     ctx.fill();
+    ctx.restore(); // Restore the transformation state to previous
 
     star.x += star.velocity.x;
     star.y += star.velocity.y;
@@ -40,8 +49,8 @@ function drawStars() {
         radius: Math.random() * 1.5,
         color: '#FBFFFF',
         velocity: {
-          x: (Math.random() - 0.5) * 0.2,
-          y: (Math.random() - 0.5) * 0.2
+          x: (Math.random() - 0.5) * 0.01,
+          y: (Math.random() - 0.5) * 0.01
         }
       };
     }
