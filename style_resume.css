@@ -1,0 +1,27 @@
+body {
+    margin: 0;
+    padding: 0;
+    width: auto;
+    background: #0d0e0e;
+    overflow-x: hidden;
+}
+
+canvas {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1; 
+}
+
+#main_hero p, span {
+    color: rgb(254, 254, 254);
+    font-family: 'Allerta Stencil';
+    text-align: center;
+    align-items: center;
+}
+
+#name {
+    font-size: 2.5em;
+    font-family: Tahoma;
+}
